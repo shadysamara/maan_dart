@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:dart1/dart1.dart' as dart1;
 
+import 'student.dart';
+
 void main(List<String> arguments) {
   ////////////////////
   ///data structure
@@ -85,7 +87,7 @@ void main(List<String> arguments) {
         grades.length;
     return MapEntry<String, num>(key, average);
   });
-  print(studentAveragesMap);
+  // print(studentAveragesMap);
   studentAveragesMap.values.toList();
   studentAveragesMap.containsKey('name');
   studentAveragesMap.containsValue('omar');
@@ -98,13 +100,30 @@ void main(List<String> arguments) {
   var methodResult3 = summation3(num2: 6, num1: 2);
 
   String fullName2 = getFullName(name: 'omar');
-  print(fullName2);
+  // print(fullName2);
 
   int x2 = makeNumberInMinus(0);
-  print(x2);
+  // print(x2);
 
   ///// using optional parameters, define method  that take full name as lower case and return
   /// it as camel case => omar ahmed ali => Omar Ahmed Ali
+
+  //////////////////////////////
+  /// classes
+  Stundent omar = Stundent(
+      name: 'omar',
+      address: 'gaza',
+      specialist: 'IT',
+      age: 24,
+      arabic: 99,
+      english: 98,
+      scince: 89,
+      computer: 100);
+
+  Stundent st1 = Stundent.secondConstructor('name');
+  print(omar.address); // instance, object
+  Manager manger = Manager();
+  // Employee employee = Employee(certification: Certification.master);
 }
 
 /*
@@ -148,9 +167,9 @@ String getFullName({String name = ''}) {
       return 'Not Defined';
     }
   } catch (error) {
-    print('an error occured');
+    // print('an error occured');
   } finally {
-    print('this is code which will be excuted in all situations');
+    // print('this is code which will be excuted in all situations');
   }
 }
 
@@ -161,6 +180,6 @@ int makeNumberInMinus(int num) {
     assert(num != 0);
     return num * -1;
   } catch (e) {
-    print('you cant pass zero to me');
+    // print('you cant pass zero to me');
   }
 }
